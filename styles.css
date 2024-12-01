@@ -4,9 +4,10 @@ body {
     text-align: center;
     margin: 0;
     padding: 0;
-    background-image: url('background-large.jpg'); /* Image pour les grands écrans */
+    background-image: url('BACK.png');
     background-size: cover;
     background-position: center;
+    background-attachment: fixed; /* Fixe l'arrière-plan lors du défilement */
 }
 
 /* Page d'introduction */
@@ -23,7 +24,7 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-/* Styles pour le bouton "Play" */
+/* Bouton Play */
 #play-button {
     font-size: 1.5rem;
     padding: 10px 20px;
@@ -41,13 +42,14 @@ body {
     background-color: #005fa3;
 }
 
-/* Styles pour le conteneur du jeu */
+/* Conteneur du jeu */
 #game-container {
     display: grid;
     gap: 15px;
     justify-content: center;
     margin: 20px auto;
     width: max-content;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Adaptation dynamique */
 }
 
 /* Styles pour les cartes */
@@ -69,6 +71,7 @@ body {
     transition: transform 0.3s, background-color 0.3s;
 }
 
+/* Styles pour la face avant et arrière des cartes */
 .card-front,
 .card-back {
     position: absolute;
@@ -97,6 +100,7 @@ body {
     font-size: 2rem;
 }
 
+/* Animation lors du retournement des cartes */
 .card.flipped .card-front {
     transform: translateY(0);
 }
@@ -111,7 +115,7 @@ body {
     pointer-events: none;
 }
 
-/* Notification */
+/* Notifications */
 .notification {
     position: fixed;
     top: 20px;
@@ -136,4 +140,31 @@ body {
         opacity: 0;
     }
 }
+
+/* Réactivité pour les écrans plus petits */
+@media (max-width: 768px) {
+    /* Ajuster l'arrière-plan pour les petits écrans */
+    body {
+        background-image: url('BACK.png'); /* Image pour les petits écrans */
+    }
+
+    #intro-page {
+        background-image: url('images.jpeg'); /* Image par défaut sur mobile */
+    }
+
+    /* Modifier la taille des cartes pour les écrans mobiles */
+    .card {
+        width: 25vw; /* Taille des cartes sur mobile */
+        height: 25vw;
+        max-width: 80px; /* Taille maximale des cartes */
+        max-height: 80px;
+    }
+
+    /* Ajuster la taille du bouton Play */
+    #play-button {
+        font-size: 1.2rem;
+        padding: 8px 16px;
+    }
+}
+
 
