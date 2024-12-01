@@ -9,7 +9,6 @@ body {
     background-position: center;
 }
 
-
 /* Intro page styles */
 #intro-page {
     display: flex;
@@ -136,3 +135,61 @@ body {
     }
 }
 
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    /* Make the cards responsive */
+    .card {
+        width: 25vw;
+        height: 25vw;
+        max-width: 80px;
+        max-height: 80px;
+    }
+
+    /* Adjust the play button size */
+    #play-button {
+        font-size: 1.2rem;
+        padding: 8px 15px;
+    }
+
+    /* Adjust the intro page text */
+    #intro-page h1 {
+        font-size: 24px;
+    }
+
+    /* Adjust status font size for smaller screens */
+    #status p {
+        font-size: 14px;
+    }
+
+    /* Adjust the game container width */
+    #game-container {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+/* Further adjustments for very small screens (phones) */
+@media (max-width: 480px) {
+    .card {
+        width: 40vw;
+        height: 40vw;
+        max-width: 60px;
+        max-height: 60px;
+    }
+
+    /* Make the play button full width */
+    #play-button {
+        font-size: 1.1rem;
+        padding: 10px 15px;
+        width: 100%;
+    }
+
+    /* Adjust text sizes further */
+    #intro-page h1 {
+        font-size: 20px;
+    }
+
+    #status p {
+        font-size: 12px;
+    }
+}
