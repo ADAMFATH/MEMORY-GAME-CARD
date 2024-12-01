@@ -1,28 +1,29 @@
-/* General styles for the game */
+/* Styles généraux pour le jeu */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
     margin: 0;
     padding: 0;
-    background-image: url('BACK.png');
+    background-image: url('background-large.jpg'); /* Image pour les grands écrans */
     background-size: cover;
     background-position: center;
 }
 
-/* Intro page styles */
+/* Page d'introduction */
 #intro-page {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     flex-direction: column;
-    background-image: url('images.jpeg'); /* Default background image */
+    background-image: url('images.jpeg'); /* Image par défaut */
     background-size: cover;
     background-position: center;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
+/* Styles pour le bouton "Play" */
 #play-button {
     font-size: 1.5rem;
     padding: 10px 20px;
@@ -40,7 +41,7 @@ body {
     background-color: #005fa3;
 }
 
-/* Game container styles */
+/* Styles pour le conteneur du jeu */
 #game-container {
     display: grid;
     gap: 15px;
@@ -49,6 +50,7 @@ body {
     width: max-content;
 }
 
+/* Styles pour les cartes */
 .card {
     width: 15vw;
     height: 15vw;
@@ -135,61 +137,21 @@ body {
     }
 }
 
-/* Mobile responsiveness */
+/* Arrière-plan pour les petits écrans (mobile) */
 @media (max-width: 768px) {
-    /* Make the cards responsive */
+    body {
+        background-image: url('background-small.jpg'); /* Image pour les petits écrans */
+    }
+
+    #intro-page {
+        background-image: url('images-small.jpeg'); /* Image différente pour l'introduction sur mobile */
+    }
+
+    /* Ajustements pour les cartes */
     .card {
-        width: 25vw;
+        width: 25vw; /* Augmenter la taille des cartes sur mobile */
         height: 25vw;
-        max-width: 80px;
+        max-width: 80px; /* Taille maximale sur mobile */
         max-height: 80px;
-    }
-
-    /* Adjust the play button size */
-    #play-button {
-        font-size: 1.2rem;
-        padding: 8px 15px;
-    }
-
-    /* Adjust the intro page text */
-    #intro-page h1 {
-        font-size: 24px;
-    }
-
-    /* Adjust status font size for smaller screens */
-    #status p {
-        font-size: 14px;
-    }
-
-    /* Adjust the game container width */
-    #game-container {
-        width: 100%;
-        padding: 10px;
-    }
-}
-
-/* Further adjustments for very small screens (phones) */
-@media (max-width: 480px) {
-    .card {
-        width: 40vw;
-        height: 40vw;
-        max-width: 60px;
-        max-height: 60px;
-    }
-
-    /* Make the play button full width */
-    #play-button {
-        font-size: 1.1rem;
-        padding: 10px 15px;
-        width: 100%;
-    }
-
-    /* Adjust text sizes further */
-    #intro-page h1 {
-        font-size: 20px;
-    }
-
-    #status p {
-        font-size: 12px;
     }
 }
