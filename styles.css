@@ -137,21 +137,3 @@ body {
     }
 }
 
-/* Arrière-plan pour les petits écrans (mobile) */
-@media (max-width: 768px) {
-    body {
-        background-image: url('background-small.jpg'); /* Image pour les petits écrans */
-    }
-
-    #intro-page {
-        background-image: url('images-small.jpeg'); /* Image différente pour l'introduction sur mobile */
-    }
-
-    /* Ajustements pour les cartes */
-    .card {
-        width: 25vw; /* Augmenter la taille des cartes sur mobile */
-        height: 25vw;
-        max-width: 80px; /* Taille maximale sur mobile */
-        max-height: 80px;
-    }
-}
